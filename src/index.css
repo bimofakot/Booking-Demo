@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+
+  --color-brand-50: #eefbf4;
+  --color-brand-100: #d6f5e3;
+  --color-brand-200: #b0eacb;
+  --color-brand-300: #79d9a9;
+  --color-brand-400: #40c182;
+  --color-brand-500: #1da864;
+  --color-brand-600: #108650;
+  --color-brand-700: #0d6b42;
+  --color-brand-800: #0d5536;
+  --color-brand-900: #0b462e;
+  --color-brand-950: #04271a;
+
+  --animate-fade-in: fade-in 0.2s ease-out both;
+  --animate-slide-up: slide-up 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-slate-50);
+    color: var(--color-slate-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html.dark body {
+    background-color: var(--color-slate-950);
+    color: var(--color-slate-100);
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-200);
+    color: var(--color-brand-950);
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.55;
+  }
+}
+
+@layer utilities {
+  .bg-court {
+    background-image:
+      radial-gradient(circle at 12% 0%, rgba(29, 168, 100, 0.09), transparent 38%),
+      radial-gradient(circle at 92% 4%, rgba(16, 134, 80, 0.07), transparent 32%);
+  }
+
+  .pb-safe {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem);
+  }
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Booking GOR Badminton</title>
+    <meta
+      name="description"
+      content="Booking lapangan badminton GOR: cek jadwal, ajukan booking, dan pantau verifikasi owner."
+    />
+    <meta name="theme-color" content="#0d6b42" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="GOR Badminton" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <style>
+      html {
+        background-color: #f8fafc;
+      }
+      html.dark {
+        background-color: #020617;
+      }
+    </style>
+    <script>
+      (function () {
+        try {
+          var pref = localStorage.getItem('gor.v1.theme');
+          var dark =
+            pref === 'dark' ||
+            ((!pref || pref === 'system') &&
+              window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (error) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Aplikasi ini membutuhkan JavaScript. Aktifkan JavaScript di browser Anda.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
