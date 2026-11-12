@@ -1,6 +1,15 @@
+<div align="center">
+
 # Booking GOR Badminton
 
 Aplikasi booking lapangan badminton (1 lapangan, slot per jam) untuk GOR. Saat ini berjalan **sepenuhnya lokal** dengan data tiruan (mock) di `localStorage` — belum terhubung ke Firebase dan belum aman untuk produksi.
+
+[![MIT License](https://img.shields.io/github/license/bimofakot/Booking-Demo?logo=openlicense&logoColor=white)](./LICENSE)
+[![React](https://img.shields.io/badge/React_19-20232A?logo=react&logoColor=61DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite_7-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
+
+</div>
 
 > [!WARNING]
 > **DEMO ONLY — JANGAN DIPAKAI UNTUK PRODUKSI.**
