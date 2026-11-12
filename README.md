@@ -6,6 +6,10 @@ Aplikasi booking lapangan badminton (1 lapangan, slot per jam) untuk GOR. Saat i
 > **DEMO ONLY — JANGAN DIPAKAI UNTUK PRODUKSI.**
 > Password disimpan apa adanya di `localStorage`, autentikasi bisa dimanipulasi lewat DevTools, dan tidak ada validasi di sisi server. Tahap ini hanya untuk mencoba alur UI/UX dan aturan bisnis. Firebase masih berupa kerangka (`src/services/firebase/`), belum diinstal dan belum diimplementasikan.
 
+![Jadwal lapangan pada mode demo](docs/screenshot-beranda.webp)
+
+> **Status:** demo publik berlisensi MIT, berjalan sepenuhnya lokal tanpa backend. Dibangun dan dipelihara oleh Bimo Praharbiyanto; belum di-deploy.
+
 ## Fitur
 
 - **Jadwal publik**: ringkasan ketersediaan hari ini, navigasi kemarin/hari ini/besok + kalender, slot 07:00–21:00 dengan warna hijau (tersedia), kuning (menunggu verifikasi), merah (terisi), abu-abu (ditutup owner).
@@ -231,3 +235,11 @@ Firebase **belum diinstal** dan sengaja dilewati. Kerangka di `src/services/fire
 - **Bunyi notifikasi tidak muncul**: browser memblokir audio sampai ada interaksi pengguna. Klik di halaman owner terlebih dahulu dan pastikan sakelar bunyi aktif.
 - **PWA tidak bisa di-install**: harus lewat build/preview (HTTPS atau `localhost`), bukan `npm run dev`.
 - **Ingin mulai dari nol**: lihat bagian **Reset data demo**.
+
+## Bantuan
+
+Laporkan bug atau usul lewat [Issues](https://github.com/bimofakot/Booking-Demo/issues). Sertakan halaman, langkah reproduksi, dan tangkapan layar bila perlu.
+
+## Lisensi
+
+MIT License. Teks lengkap ada di [LICENSE](LICENSE).
