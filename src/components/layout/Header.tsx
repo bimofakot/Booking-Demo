@@ -7,17 +7,19 @@ import {
   LayoutDashboard,
   LogIn,
   LogOut,
+  Monitor,
   type LucideIcon,
 } from 'lucide-react';
 import type { User } from '@/types';
 import { useAuth } from '@/context/AuthContext';
+import { useTheme } from '@/context/ThemeContext';
 import { usePendingBookings } from '@/hooks/usePendingBookings';
 import { ROLE_LABEL } from '@/lib/labels';
 import { cn } from '@/lib/cn';
 import { Button, buttonClasses } from '@/components/ui/Button';
 import { Logo } from '@/components/ui/Logo';
 import { Menu, menuItemClasses } from '@/components/ui/Menu';
-import { ThemeMenu } from '@/components/ui/ThemeMenu';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
 function NavItem({
   to,
@@ -68,6 +70,7 @@ function AccountMenu({
   onLogout: () => void;
 }) {
   const isOwner = user.role === 'owner';
+  const { preference, setPreference } = useTheme();
 
   return (
     <Menu
@@ -131,6 +134,20 @@ function AccountMenu({
             </Link>
           )}
 
+          {preference !== 'system' && (
+            <button
+              type="button"
+              onClick={() => {
+                setPreference('system');
+                close();
+              }}
+              className={menuItemClasses}
+            >
+              <Monitor className="h-4 w-4" />
+              Ikuti tema perangkat
+            </button>
+          )}
+
           <Button
             type="button"
             variant="ghost"
@@ -183,7 +200,7 @@ export function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
-          <ThemeMenu />
+          <ThemeToggle />
           {loading ? (
             <span className="h-9 w-9 animate-pulse rounded-full bg-slate-200 dark:bg-slate-800" />
           ) : user ? (
